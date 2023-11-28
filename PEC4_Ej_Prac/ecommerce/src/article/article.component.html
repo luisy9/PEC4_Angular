@@ -5,13 +5,20 @@
     alt="Photo of a Shiba Inu"
   />
   <mat-card-content>
-    <p>
-      Teclado retro
-    </p>
-    <p>{{ stock }}€</p>
+    <p>Teclado retro</p>
+    <p>{{ price }} €</p>
+    <p [ngClass]="{ nonePrice: noStock }" *ngIf="!noStock">{{ stock }}</p>
+    <p></p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="accent" (click)="delItem()" [class.custom-style]="noStock">-</button>
+  <mat-card-actions *ngIf="!noStock">
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="delItem()"
+      [class.custom-style]="noStock"
+    >
+      -
+    </button>
     <button mat-raised-button color="primary" (click)="sumItem()">+</button>
   </mat-card-actions>
 </mat-card>

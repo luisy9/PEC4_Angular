@@ -33,3 +33,7 @@ mat-card-actions {
 .color-card {
   background-color: red;
 }
+
+.nonePrice {
+  color: grey;
+}

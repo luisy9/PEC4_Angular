@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,12 +12,20 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ArticleComponent {
 
-  stock: number = 10;
+  price: number = 10;
+  maxStock: number = 10;
+  stock: number = 0;
   noStock: boolean = false;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  constructor() {
     this.stock;
   }
+
+  // ngAfterViewInit(): void {
+  //   if (this.stock === 0) {
+  //     this.noStock = true;
+  //   }
+  // }
 
   sumItem() {
     if (this.stock >= 0) {
