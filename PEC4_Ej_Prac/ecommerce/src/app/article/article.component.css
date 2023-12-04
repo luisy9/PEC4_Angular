@@ -37,3 +37,11 @@ mat-card-actions {
 .nonePrice {
   color: grey;
 }
+
+.countZero {
+  background-color: red;
+}
+
+.countZeroButton {
+  display: none;
+}
